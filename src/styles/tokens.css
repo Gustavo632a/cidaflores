@@ -1,0 +1,18 @@
+:root {
+  --color-sky: #627f99;
+  --color-sky-light: #b4c6d3;
+  --color-petal: #f8e5dc;
+  --color-cream: #f8f5ed;
+  --color-sage: #a1aa81;
+  --color-sage-dark: #697758;
+  --color-ink: #343e3a;
+  --color-white: #fff;
+  --color-border: #e8e4de;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", sans-serif;
+  --space-section: clamp(72px, 8vw, 136px);
+  --space-gutter: clamp(20px, 5.5vw, 110px);
+  --radius: 0;
+  --duration: 280ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
