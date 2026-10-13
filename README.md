@@ -20,7 +20,7 @@ Substituir as imagens ilustrativas por fotografias aprovadas da floricultura man
 
 O Hero foi criado pela ferramenta ImageGen integrada. Prompt: fotografia editorial original, buquê volumoso de rosas rosadas, lisianthus creme, flores amarelas suaves e folhagens, segurado por uma mão, céu azul suave, espaço à esquerda para tipografia, luz natural, sem textos ou marcas. Arquivo final: `public/images/hero-buque.webp`. As demais fotografias são referências do Unsplash; fontes em `assets/SOURCES.md`. A galeria reúne seis fotografias reais de inspiração, sem afirmar que são trabalhos da Cida Flores.
 
-Fontes Cormorant Garamond e DM Sans são servidas localmente por @fontsource, com font-display swap. Licenças acompanham os pacotes. Não há dependências de animação ou mapa externo na carga inicial.
+Fontes Cormorant Garamond e DM Sans são servidas localmente por @fontsource, com font-display swap. Licenças acompanham os pacotes. O mapa interativo usa um iframe do Google Maps com carregamento lazy.
 
 ## Produção e segurança
 
@@ -29,7 +29,7 @@ Servir `dist/` por HTTPS. O plugin Vite insere Schema.org, canonical e `og:url` 
 Headers sugeridos no provedor:
 
 ```text
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
@@ -38,4 +38,4 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 Usar HSTS apenas após assegurar HTTPS em todos os subdomínios. Para provedores com CSP restrita a scripts, permitir o JSON-LD por hash quando necessário. Não aplicar a política de produção ao servidor Vite de desenvolvimento.
 
-O bloco de localização é uma ilustração, não um mapa geográfico; o link abre a localização fornecida no briefing. Não há telefone, horários, preços, estoque, entrega ou avaliações presumidos.
+O bloco de localização carrega um Google Maps interativo com o identificador do estabelecimento fornecido no briefing. A URL de incorporação fica em `site.mapsEmbed`; os links de navegação usam `site.maps`. O WhatsApp foi confirmado pelo responsável pelo projeto. Endereço e horários seguem sujeitos à confirmação; não há preços, estoque, entrega ou avaliações presumidos.

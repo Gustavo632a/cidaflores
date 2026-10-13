@@ -402,77 +402,6 @@ address {
   align-items: center;
   justify-content: center;
 }
-.locationLabel {
-  position: absolute;
-  top: 28px;
-  font-size: 9px;
-  letter-spacing: 0.17em;
-}
-.mapLines {
-  position: absolute;
-  inset: -90px;
-  transform: rotate(-25deg);
-  opacity: 0.55;
-}
-.mapLines i {
-  position: absolute;
-  display: block;
-  background: #fffdf4;
-  width: 100%;
-  height: 18px;
-  top: 25%;
-  border: 1px solid #d8dacd;
-}
-.mapLines i:nth-child(2) {
-  top: 55%;
-  height: 32px;
-}
-.mapLines i:nth-child(3) {
-  top: 80%;
-}
-.mapLines i:nth-child(4) {
-  top: 0;
-  left: 35%;
-  width: 24px;
-  height: 100%;
-}
-.mapLines i:nth-child(5) {
-  top: 0;
-  left: 70%;
-  width: 15px;
-  height: 100%;
-}
-.mapPin {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--color-cream);
-  padding: 20px 30px;
-  box-shadow: 0 4px 30px #343e3a0c;
-}
-.mapPin > span:first-child {
-  color: var(--color-sage-dark);
-  font-size: 40px;
-  line-height: 1;
-}
-.mapPin strong {
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  font-size: 34px;
-}
-.mapPin > span:last-child {
-  font-size: 10px;
-}
-.mapLink {
-  position: absolute;
-  bottom: 28px;
-  font-size: 11px;
-  display: flex;
-  gap: 40px;
-  min-height: 44px;
-  align-items: center;
-}
 .contactCta {
   border-top: 1px solid var(--color-border);
   margin-top: 80px;
@@ -872,3 +801,5 @@ address {
     bottom: 70px;
   }
 }
+.mapFrame { width:100%; height:100%; border:0; display:block; }
+.mapExternal { position:absolute; bottom:16px; right:16px; background:var(--color-cream); padding:10px 16px; display:flex; align-items:center; gap:20px; min-height:44px; font-size:11px; }

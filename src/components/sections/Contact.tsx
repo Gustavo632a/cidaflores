@@ -47,30 +47,19 @@ export function Contact() {
             </a>
           </div>
         </div>
-        <a
-          className={styles.locationCard}
-          href={safeHttps(site.maps)}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Abrir localização da Cida Flores no Google Maps"
-        >
-          <div className={styles.mapLines} aria-hidden="true">
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-          </div>
-          <span className={styles.locationLabel}>RECIFE, PERNAMBUCO</span>
-          <div className={styles.mapPin}>
-            <span aria-hidden="true">✳</span>
-            <strong>Cida Flores</strong>
-            <span>Graças · Recife</span>
-          </div>
-          <span className={styles.mapLink}>
+        <div className={styles.locationCard}>
+          <iframe
+            className={styles.mapFrame}
+            src={site.mapsEmbed}
+            title="Localização da Floricultura Cida Flores Recife no Google Maps"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+          <a className={styles.mapExternal} href={safeHttps(site.maps)} target="_blank" rel="noopener noreferrer">
             Abrir no Google Maps <span aria-hidden="true">↗</span>
-          </span>
-        </a>
+          </a>
+        </div>
       </div>
       <div className={styles.contactCta} data-reveal>
         <p>
