@@ -1,6 +1,6 @@
 export const site = {
   name: "Cida Flores",
-  whatsapp: "",
+  whatsapp: "5581985565253",
   canonical: "",
   address: "Av. Rui Barbosa, 896, Loja 11",
   neighborhood: "Graças — Recife/PE",

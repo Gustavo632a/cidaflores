@@ -26,7 +26,15 @@ for (const width of [320, 375, 390, 430, 768, 1024, 1440, 1920]) {
       );
     for (const id of anchors)
       await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
-    await expect(page.locator('a[href*="wa.me"]')).toHaveCount(0);
+    const contactLinks = page.locator('a[href^="https://wa.me/"]');
+    await expect(contactLinks).toHaveCount(9);
+    for (const link of await contactLinks.all()) {
+      const url = new URL((await link.getAttribute("href"))!);
+      expect(url.pathname).toBe("/5581985565253");
+      expect(url.searchParams.get("text")).toContain("Olá, Cida Flores!");
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
     expect(errors).toEqual([]);
     await page.goto("/");
     await page.waitForTimeout(1000);
